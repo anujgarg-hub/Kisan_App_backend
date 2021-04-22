@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/template/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/template/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/templat1e/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="/template/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/template/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/template/images/favicon.png" />
+  </head>
+  <body>
+
+    <form action="/crop/addnewcrop" method="post" enctype="multipart/form-data">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <h3>Crop Interface</h3>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Type <% if (errors.ctype) { %>
+                <%= errors.ctype.msg %>
+                <% } %></label>
+              <input type="text" class="form-control" value="<%=data.ctype%>" name="ctype" placeholder="Type">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Name <% if (errors.cname) { %>
+                <%= errors.cname.msg %>
+                <% } %></label>
+              <input type="text" class="form-control" value="<%=data.cname%>" name="cname" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">From Month <% if (errors.fmonth) { %>
+                    <%= errors.fmonth.msg %>
+                    <% } %></label>
+                <input type="month" class="form-control" value="<%=data.fmonth%>" name="fmonth" placeholder="From Month">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">To Month <% if (errors.tmonth) { %>
+                    <%= errors.tmonth.msg %>
+                    <% } %></label>
+                <input type="month" class="form-control" value="<%=data.tmonth%>" name="tmonth" placeholder="To Month">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <select class="form-control" style="margin-left: 1px;" name="states">
+                    <option>-Select State-</option>
+                    <option>Andhra Pradesh</option>
+                    <option>Himachal Pradesh</option>
+                    <option>Madhya Pradesh</option>
+                    <option>Uttar Pradesh</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <!-- <label for="">Choose Image</label> -->
+                <input type="file" class="custom-file" name="image">
+            </div> 
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for=""><% if (errors.cdesc) { %>
+                    <%= errors.cdesc.msg %>
+                    <% } %></label>
+                <textarea class="form-control" value="<%=data.cdesc%>" name="cdesc" placeholder="Description" rows="3"></textarea>
+            </div>
+            <label for=""><% if (message) { %>
+                <p style="color:red"><%- message %></p>
+                <% } %></label>
+          </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form> 
+     </body>
+</html>

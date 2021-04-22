@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>
+       
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/template/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/template/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/templat1e/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="/template/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/template/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/template/images/favicon.png" />
+</head>
+
+<body>
+  <div class="card">
+    <div class="card-bod1y">
+      <p class="card-title">Policies Display</p>
+      <div class="table-responsive">
+        <table id="example" class="display expandable-table table table-sm table-striped table-hover">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Organization</th>
+            <th scope="col">Website Link</th>
+            <th scope="col">Video Link</th>
+            <th scope="col">File</th>
+            <th scope="col">Description</th>
+            <th scope="col">Update/Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% data.map(function(item,index){ %>
+          <tr>
+            <th scope="row"><%=item.policies_id%></th>
+            <td><%=item.policiesname%></td>
+            <td><%=item.policiesbyorg%></td>
+            <td><a href="<%=item.policiesweblink%>" target="_blank"><%=item.policiesweblink%></a></td>
+            <td><a href="<%=item.policiesvideolink%>" target="_blank"><%=item.policiesvideolink%></a></td>
+            <td><a href="/policies/displaypicture?pid=<%=item.policies_id%>"><img src="/images/<%=item.policiesicon%>" alt="Edit Picture" height="30" width="30" class="rounded"></a></td>
+            <td><%=item.policiesdescription%></td>
+            <td><a href="/policies/policiesupdatedelete?pid=<%=item.policies_id%>" class="btn btn-primary">Edit/Delete</a></td>
+          </tr>
+          <%})%>
+          <% if (message) { %>
+            <p style="color:red"><%- message %></p>
+            <% } %>
+        </tbody>
+      </table>
+      </div>
+      </div>
+      </div>
+</body>
+</html>

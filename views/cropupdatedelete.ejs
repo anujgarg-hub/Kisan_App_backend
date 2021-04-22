@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/template/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/template/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/templat1e/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="/template/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/template/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/template/images/favicon.png" />
+  </head>
+  <body>
+
+    <form action="/crop/cropupdesubmit" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <h3>Crop Interface</h3>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Type</label>
+              <input type="hidden" class="form-control" value="<%=data[0].cropid%>" name="cropid" placeholder="ID">
+              <input type="text" class="form-control" value="<%=data[0].croptype%>" name="ctype" placeholder="Type">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Name</label>
+              <input type="text" class="form-control" value="<%=data[0].cropname%>" name="cname" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">From Month</label>
+                <input type="month" class="form-control" value="<%=data[0].from_month%>" name="fmonth" placeholder="From Month">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">To Month</label>
+                <input type="month" class="form-control" value="<%=data[0].to_month%>" name="tmonth" placeholder="To Month">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Select State</label>
+              <select class="form-control" name="states" style="margin-left: 1px;">
+                    <option>-Select State-</option>
+                    <option value="<%=data[0].states%>" selected><%=data[0].states%></option>
+                    <option>Andhra Pradesh</option>
+                    <option>Himachal Pradesh</option>
+                    <option>Madhya Pradesh</option>
+                    <option>Uttar Pradesh</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Description</label>
+                <textarea class="form-control" name="cdesc" placeholder="Description" rows="1"><%=data[0].cropdesc%></textarea>
+            </div>
+       </div>
+       <div class="form-row">
+        <label for=""><% if (message) { %>
+            <p style="color:red"><%- message %></p>
+            <% } %></label>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <button type="submit" name="btn" value="Edit" class="btn btn-primary">Edit</button>
+            </div>
+            <div class="form-group col-md-6">
+                <button type="submit" name="btn" value="Delete" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+      </form> 
+     </body>
+</html>

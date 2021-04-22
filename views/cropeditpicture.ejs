@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/template/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/template/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/templat1e/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="/template/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/template/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/template/images/favicon.png" />
+    <!-- /theme JS files -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 card">
+                <div class="row">
+                    <img src="/images/<%=data[0].image%>" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+            <div class="col-md-7 card">
+                <h4>Edit Picture
+                    <hr />
+                </h4>
+                <form action="/crop/editpicture" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <!-- <label for="exampleInputText1">Last Name</label> -->
+                                <input type="hidden" class="form-control" name="cid" value="<%=data[0].cropid%>">
+                                <input type="file" class="file-input" data-fouc name="picture">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-success mt-3">Edit Picture</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

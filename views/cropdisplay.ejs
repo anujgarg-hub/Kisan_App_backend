@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <title>
+       
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/template/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/template/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/templat1e/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="/template/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/template/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/template/images/favicon.png" />
+</head>
+
+<bo11dy1>
+<!-- partial -->
+<div class="mai1n-panel">
+  <div class="conte1nt-wrapper">
+    <div class="row">
+      <div class="col-md-12 grid-ma1rgin st1retch-card">
+        <div class="card">
+          <div class="card-bod1y">
+            <p class="card-title">Crop Display</p>
+            <div class="table-responsive">
+              <table id="example" class="display expandable-table table table-sm table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>State</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Update/Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% data.map(function(item,index){ %>
+                <tr>
+                  <th scope="row"><%=item.cropid%></th>
+                  <td><%=item.croptype%></td>
+                  <td><%=item.cropname%></td>
+                  <td><%=item.from_month%></td>
+                  <td><%=item.to_month%></td>
+                  <td><%=item.states%></td>
+                  <td><a href="/crop/displaypicture?cid=<%=item.cropid%>"><img src="/images/<%=item.image%>" height="30" width="30" class="rounded"></a></td>
+                  <td><%=item.cropdesc%></td>
+                  <td><a href="/crop/cropupdatedelete?cropid=<%=item.cropid%>" class="btn btn-primary">Edit/Delete</a></td>
+                </tr>
+                
+                <%})%>
+                <% if (message) { %>
+                  <p style="color:red"><%- message %></p>
+                  <% } %>
+              </tbody>
+            </table>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- content-wrapper ends -->
+</div>
+
+
+    <!-- <table id="example" class="table table-sm display expandable-table table-bordered table-striped" style="width:100%">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Type</th>
+            <th scope="col">Name</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">State</th>
+            <th scope="col">Image</th>
+            <th scope="col">Description</th>
+            <th scope="col">Update/Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% data.map(function(item,index){ %>
+          <tr>
+            <th scope="row"><%=item.cropid%></th>
+            <td><%=item.croptype%></td>
+            <td><%=item.cropname%></td>
+            <td><%=item.from_month%></td>
+            <td><%=item.to_month%></td>
+            <td><%=item.states%></td>
+            <td><img src="/images/<%=item.image%>" height="30" width="30" class="rounded"></td>
+            <td><%=item.cropdesc%></td>
+            <td><a href="/crop/cropupdatedelete?cropid=<%=item.cropid%>">Edit/Delete</a></td>
+          </tr>
+          
+          <%})%>
+          <% if (message) { %>
+            <p style="color:red"><%- message %></p>
+            <% } %>
+        </tbody>
+      </table> -->
+</body>
+</html>

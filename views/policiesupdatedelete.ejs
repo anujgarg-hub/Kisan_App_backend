@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/template/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/template/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/templat1e/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="/template/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/template/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/template/images/favicon.png" />
+  </head>
+  <body>
+
+    <form action="/policies/policiesupdesubmit" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <h3>Policies Interface</h3>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Name</label>
+              <input type="hidden" class="form-control" value="<%=data[0].policies_id %>" name="pid">
+              <input type="text" class="form-control" value="<%=data[0].policiesname %>" name="pname" placeholder="Policies Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Organization</label>
+              <input type="text" class="form-control" value="<%=data[0].policiesbyorg %>" name="porg" placeholder="Policy by Organization">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Weblink</label>
+              <input type="text" class="form-control" value="<%=data[0].policiesweblink %>" name="pweblink" placeholder="Website Link">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Video Link</label>
+              <input type="text" class="form-control" value="<%=data[0].policiesvideolink %>" name="pvideolink" placeholder="Video Link">
+            </div>
+          </div>
+          <div class="form-row">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4">Description</label>
+                <textarea class="form-control" name="pdesc" placeholder="Description" rows="2"><%=data[0].policiesdescription %></textarea>
+            </div>
+            <!-- <label for="exampleFormControlTextarea1">Example textarea</label> -->
+            <% if (message) { %>
+                <p style="color:red"><%- message %></p>
+                <% } %>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <button type="submit" name="btn" value="Edit" class="btn btn-primary">Edit</button>
+            </div>
+            <div class="form-group col-md-6">
+                <button type="submit" name="btn" value="Delete" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+      </form> 
+     </body>
+</html>

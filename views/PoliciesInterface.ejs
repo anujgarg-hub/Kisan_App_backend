@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/template/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/template/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/templat1e/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/template/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="/template/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/template/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/template/images/favicon.png" />
+  </head>
+  <body>
+
+    <form action="/policies/addpolicies" method="post" enctype="multipart/form-data">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <h3>Policies Interface</h3>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4"><% if (errors.pname) { %>
+                <p style="color:red"><%= errors.pname.msg %></p>
+                <% } %></label>
+              <input type="text" class="form-control" value="<%=data.pname %>" name="pname" placeholder="Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4"><% if (errors.porg) { %>
+                <p style="color:red"><%= errors.porg.msg %></p>
+                <% } %></label>
+              <input type="text" class="form-control" value="<%=data.porg %>" name="porg" placeholder="Organization">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4"><% if (errors.pweblink) { %>
+                <p style="color:red"><%= errors.pweblink.msg %></p>
+                <% } %></label>
+              <input type="text" class="form-control" value="<%=data.pweblink %>" name="pweblink" placeholder="Website Link">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4"><% if (errors.pvideolink) { %>
+                <p style="color:red"><%= errors.pvideolink.msg %></p>
+                <% } %></label>
+              <input type="text" class="form-control" value="<%=data.pvideolink %>" name="pvideolink" placeholder="Video Link">
+            </div>
+          </div>
+          <div class="form-row">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <!-- <label for="inputEmail4">Email</label> -->
+                <input type="file" class="custom-file" name="picon">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4"><% if (errors.pdesc) { %>
+                <p style="color:red"><%= errors.pdesc.msg %></p>
+                <% } %></label>
+                <textarea class="form-control" value="<%=data.pdesc %>" name="pdesc" placeholder="Description" rows="2"><%=data.pdesc %></textarea>
+            </div>
+            <!-- <label for="exampleFormControlTextarea1">Example textarea</label> -->
+            <% if (message) { %>
+                <p style="color:red"><%- message %></p>
+                <% } %>
+          </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form> 
+     </body>
+</html>
